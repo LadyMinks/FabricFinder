@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.example.fabricfinder.databinding.FragmentSecondBinding;
 
@@ -31,16 +30,15 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Spinner lengthSpinner = (Spinner) view.findViewById(R.id.spinner_length_input);
-        Spinner widthSpinner = (Spinner) view.findViewById(R.id.spinner_width_input);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this.requireContext(),
                 R.array.measurements_array,
                 android.R.layout.simple_spinner_item
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        lengthSpinner.setAdapter(adapter);
-        widthSpinner.setAdapter(adapter);
+
+        binding.spinnerLengthInput.setAdapter(adapter);
+        binding.spinnerWidthInput.setAdapter(adapter);
 
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override

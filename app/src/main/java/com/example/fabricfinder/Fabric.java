@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Fabric {
 
+    //TODO: Image thingie
     private final Image fabricPicture;
     private final int width;
     private final int height;
