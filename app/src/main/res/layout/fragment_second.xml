@@ -15,19 +15,19 @@
             android:id="@+id/fabric_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/fabric_type_input"
+            android:src="@drawable/baseline_image_24"
+            app:layout_constraintBottom_toTopOf="@id/tf_fabric_type_input"
             app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/baseline_image_24"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/fabric_type_input"
+            android:id="@+id/tf_fabric_type_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Fabric Type"
-            app:layout_constraintBottom_toTopOf="@id/button_second"
+            app:layout_constraintBottom_toTopOf="@id/tf_fabric_length_input"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fabric_image">
@@ -38,6 +38,56 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_fabric_length_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Fabric Length"
+            app:layout_constraintBottom_toTopOf="@id/tf_fabric_width_input"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/spinner_length_input"
+            app:layout_constraintTop_toBottomOf="@id/tf_fabric_type_input">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinner_length_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/tf_fabric_width_input"
+            app:layout_constraintLeft_toRightOf="@id/tf_fabric_length_input"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tf_fabric_type_input" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_fabric_width_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Fabric Width"
+            app:layout_constraintBottom_toTopOf="@id/button_second"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/spinner_width_input"
+            app:layout_constraintTop_toBottomOf="@id/tf_fabric_length_input">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinner_width_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/button_second"
+            app:layout_constraintLeft_toRightOf="@id/tf_fabric_width_input"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tf_fabric_length_input" />
+
         <Button
             android:id="@+id/button_second"
             android:layout_width="wrap_content"
@@ -46,7 +96,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fabric_type_input" />
+            app:layout_constraintTop_toBottomOf="@id/tf_fabric_width_input" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
